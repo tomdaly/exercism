@@ -32,7 +32,20 @@ export default class Triplet {
     return (aSq + bSq == cSq);
   }
 
-  static where(...triplets: any[]): Triplet[] {
+  static where(...input: any[]): Triplet[] {
+    const n = input[0];
+    const triplets = [];
+    for (let i = 1; i <= n; i++) {
+      for (let j = i + 1; j <= n; j++) {
+        for (let k = j + 1; k <= n; k++) {
+          let triplet = new Triplet(i, j, k);
+          if (triplet.isPythagorean()) {
+            triplets.push(triplet);
+          }
+        }
+      }
+    }
     return triplets;
   }
 }
+
