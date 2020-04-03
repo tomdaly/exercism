@@ -22,7 +22,7 @@ export default class Triplet {
   }
 
   product(): number {
-    return -1;
+    return this.a * this.b * this.c;
   }
 
   isPythagorean(): boolean {

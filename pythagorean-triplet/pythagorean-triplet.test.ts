@@ -5,7 +5,7 @@ describe("Triplet", () => {
     expect(new Triplet(3, 4, 5).sum()).toBe(12)
   })
 
-  xit("calculates the product", () => {
+  it("calculates the product", () => {
     expect(new Triplet(3, 4, 5).product()).toBe(60)
   })
 
