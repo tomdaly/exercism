@@ -25,7 +25,7 @@ describe("Triplet", () => {
     expect(products).toEqual([60, 480])
   })
 
-  xit("can make triplets 11 through 20", () => {
+  it("can make triplets 11 through 20", () => {
     const triplets = Triplet.where(20, 11)
     const products = triplets
       .sort()

@@ -33,14 +33,19 @@ export default class Triplet {
   }
 
   static where(...input: any[]): Triplet[] {
-    const n = input[0];
-    const triplets = [];
-    for (let i = 1; i <= n; i++) {
-      for (let j = i + 1; j <= n; j++) {
-        for (let k = j + 1; k <= n; k++) {
-          let triplet = new Triplet(i, j, k);
-          if (triplet.isPythagorean()) {
-            triplets.push(triplet);
+    const triplets: Triplet[] = [];
+    input = input.filter(elem => elem != null).sort();
+    const smallest = Math.min(...input);
+    const biggest = Math.max(...input);
+
+    for (let n = smallest; n <= biggest; n++) {
+      for (let i = 1; i <= n; i++) {
+        for (let j = i + 1; j <= n; j++) {
+          for (let k = j + 1; k <= n; k++) {
+            const triplet = new Triplet(i, j, k);
+            if (triplet.isPythagorean()) {
+              triplets.push(triplet);
+            }
           }
         }
       }
