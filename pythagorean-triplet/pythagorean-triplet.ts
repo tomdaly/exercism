@@ -26,7 +26,10 @@ export default class Triplet {
   }
 
   isPythagorean(): boolean {
-    return false;
+    const aSq = this.a * this.a;
+    const bSq = this.b * this.b;
+    const cSq = this.c * this.c;
+    return (aSq + bSq == cSq);
   }
 
   static where(...triplets: any[]): Triplet[] {
