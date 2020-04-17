@@ -21,11 +21,21 @@ type Positions = {
   black: number[]
 }
 
+function inSamePlace(a: number[], b: number[]): boolean {
+  if (a === b) return true;
+  if (a == null || b == null || a.length != b.length) return false;
+  for (let i = 0; i < a.length; ++i) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
+}
+
 export default class QueenAttack {
   public white: number[];
   public black: number[];
 
   constructor(positions: Positions) {
+    if (inSamePlace(positions.white, positions.black)) throw "Queens cannot share the same space";
     this.white = positions.white;
     this.black = positions.black;
   }
@@ -34,3 +44,4 @@ export default class QueenAttack {
     return false;
   }
 }
+

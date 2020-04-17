@@ -7,7 +7,7 @@ describe("Queens", () => {
     expect(queens.black).toEqual([6, 1])
   })
 
-  xit("cannot occupy the same space", () => {
+  it("cannot occupy the same space", () => {
     const positioning: { black: [number, number]; white: [number, number] } = {
       black: [2, 4],
       white: [2, 4]
