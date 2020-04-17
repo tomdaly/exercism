@@ -51,6 +51,7 @@ export default class QueenAttack {
   canAttack(): boolean {
     if (this.white[0] === this.black[0]) return true;
     if (this.white[1] === this.black[1]) return true;
+    if (Math.abs(this.white[0] - this.black[0]) == Math.abs(this.white[1] - this.black[1])) return true;
     return false;
   }
 
