@@ -35,7 +35,7 @@ describe("Queens", () => {
     expect(queens.toString()).toEqual(board)
   })
 
-  xit("queens cannot attack", () => {
+  it("queens cannot attack", () => {
     const queens = new QueenAttack({ white: [2, 3], black: [4, 7] })
     expect(queens.canAttack()).toEqual(false)
   })
