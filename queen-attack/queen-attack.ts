@@ -49,6 +49,7 @@ export default class QueenAttack {
   }
 
   canAttack(): boolean {
+    if (this.white[0] === this.black[0]) return true;
     return false;
   }
 

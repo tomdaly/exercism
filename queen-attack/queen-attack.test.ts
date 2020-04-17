@@ -40,7 +40,7 @@ describe("Queens", () => {
     expect(queens.canAttack()).toEqual(false)
   })
 
-  xit("queens can attack when they are on the same row", () => {
+  it("queens can attack when they are on the same row", () => {
     const queens = new QueenAttack({ white: [2, 4], black: [2, 7] })
     expect(queens.canAttack()).toEqual(true)
   })
