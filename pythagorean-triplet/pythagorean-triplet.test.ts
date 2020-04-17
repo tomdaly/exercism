@@ -33,7 +33,7 @@ describe("Triplet", () => {
     expect(products).toEqual([3840])
   })
 
-  xit("can filter on sum", () => {
+  it("can filter on sum", () => {
     const triplets = Triplet.where(100, undefined, 180)
     const products = triplets
       .sort()

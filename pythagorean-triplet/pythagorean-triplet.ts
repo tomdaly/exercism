@@ -34,9 +34,9 @@ export default class Triplet {
 
   static where(...input: any[]): Triplet[] {
     const triplets: Triplet[] = [];
-    input = input.filter(elem => elem != null).sort();
-    const smallest = Math.min(...input);
-    const biggest = Math.max(...input);
+    input = input.filter(elem => elem != (undefined || null)).sort();
+    const smallest = input[0]
+    const biggest = input[input.length - 1];
 
     for (let n = smallest; n <= biggest; n++) {
       for (let i = 1; i <= n; i++) {
