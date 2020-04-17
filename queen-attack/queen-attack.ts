@@ -30,6 +30,14 @@ function inSamePlace(a: number[], b: number[]): boolean {
   return true;
 }
 
+function initBoard(size: number): string[][] {
+  return [...Array(size)].map(() => {
+    const arr = Array(size).fill('_ ');
+    arr[size - 1] = '_';
+    return arr;
+  });
+}
+
 export default class QueenAttack {
   public white: number[];
   public black: number[];
@@ -42,6 +50,14 @@ export default class QueenAttack {
 
   canAttack(): boolean {
     return false;
+  }
+
+  toString(): string {
+    const boardSize = 8; // 8x8A
+    const board = initBoard(boardSize);
+    board[this.white[0]][this.white[1]] = (this.white[1] == boardSize) ? 'W' : 'W ';
+    board[this.black[0]][this.black[1]] = (this.black[1] == boardSize) ? 'B' : 'B ';
+    return board.map(e => e.join('')).join('\n') + '\n'; 
   }
 }
 
