@@ -1,6 +1,6 @@
 export const decodedResistorValue = (codes: string[]): number => {
-  // const ohmExponent = COLORS.indexOf(codes[2])
-  const ohms = parseInt(codes.slice(0, 2).map((code) => COLORS.indexOf(code)).join(""));
+  const ohmsExponent = 10 ** COLORS.indexOf(codes[2]);
+  const ohms = parseInt(codes.slice(0, 2).map((code) => COLORS.indexOf(code)).join("")) * ohmsExponent;
   return `${ohms} ohms`;
 }
 

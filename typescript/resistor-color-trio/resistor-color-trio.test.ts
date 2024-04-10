@@ -7,7 +7,7 @@ describe('Resistor Colors', () => {
     )
   })
 
-  xit('Blue and grey and brown', () => {
+  it('Blue and grey and brown', () => {
     expect(decodedResistorValue(['blue', 'grey', 'brown'])).toEqual('680 ohms')
   })
 
