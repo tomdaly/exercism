@@ -1,7 +1,20 @@
-export const decodedResistorValue = (codes: string[]): number => {
-  const ohmsExponent = 10 ** COLORS.indexOf(codes[2]);
-  const ohms = parseInt(codes.slice(0, 2).map((code) => COLORS.indexOf(code)).join("")) * ohmsExponent;
-  return `${ohms} ohms`;
+export const decodedResistorValue = (codes: string[]): string => {
+  const ohms = parseInt(codes.slice(0, 2).map((code) => COLORS.indexOf(code)).join(""));
+  const exponent = COLORS.indexOf(codes[2]);
+  const totalOhms = ohms * (10 ** exponent);
+
+  return convertToMetricPrefix(totalOhms);
+}
+
+const convertToMetricPrefix = (totalOhms: number): string => {
+  for (const key in METRIC_PREFIX) {
+    const prefixValue = METRIC_PREFIX[key];
+    const divided = totalOhms / prefixValue;
+    if (divided > 1) {
+      return `${divided} ${key}`;
+    }
+  }
+  return `${totalOhms} ohms`;
 }
 
 const COLORS = [
@@ -17,8 +30,8 @@ const COLORS = [
   'white',
 ];
 
-const METRIC_PREFIX = [
-  'kilo',
-  'mega',
-  'giga'
-]
+const METRIC_PREFIX = {
+  'gigaohms': 1000000000,
+  'megaohms': 1000000,
+  'kiloohms': 1000,
+}
