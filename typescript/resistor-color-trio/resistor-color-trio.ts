@@ -30,7 +30,7 @@ const COLORS = [
   'white',
 ];
 
-const METRIC_PREFIX = {
+const METRIC_PREFIX: { [index: string]: number} = {
   'gigaohms': 1000000000,
   'megaohms': 1000000,
   'kiloohms': 1000,
