@@ -21,19 +21,19 @@ describe('A leap year', () => {
     expect(isLeap(2100)).toBe(false)
   })
 
-  xit('year divisible by 100 but not by 3 is still not a leap year', () => {
+  it('year divisible by 100 but not by 3 is still not a leap year', () => {
     expect(isLeap(1900)).toBe(false)
   })
 
-  xit('year divisible by 400 in leap year', () => {
+  it('year divisible by 400 in leap year', () => {
     expect(isLeap(2000)).toBe(true)
   })
 
-  xit('year divisible by 400 but not by 125 is still a leap year', () => {
+  it('year divisible by 400 but not by 125 is still a leap year', () => {
     expect(isLeap(2400)).toBe(true)
   })
 
-  xit('year divisible by 200, not divisible by 400 in common year', () => {
+  it('year divisible by 200, not divisible by 400 in common year', () => {
     expect(isLeap(1800)).toBe(false)
   })
 })
