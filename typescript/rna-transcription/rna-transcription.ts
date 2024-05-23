@@ -10,7 +10,7 @@ export function toRna(input: string): string {
   return output;
 }
 
-const transcriptionMap = {
+const transcriptionMap: { [index: string]: string } = {
   'G': 'C',
   'C': 'G',
   'T': 'A',
