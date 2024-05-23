@@ -1,4 +1,4 @@
-export function isLeap(year: number): bool {
+export function isLeap(year: number): boolean {
   const divisibleByFour = year % 4 == 0;
   if (divisibleByFour) {
     const divisibleByOneHundred = year % 100 == 0;
