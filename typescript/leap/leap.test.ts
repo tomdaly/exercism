@@ -5,19 +5,19 @@ describe('A leap year', () => {
     expect(isLeap(2015)).toBe(false)
   })
 
-  xit('year divisible by 2, not divisible by 4 in common year', () => {
+  it('year divisible by 2, not divisible by 4 in common year', () => {
     expect(isLeap(1970)).toBe(false)
   })
 
-  xit('year divisible by 4, not divisible by 100 in leap year', () => {
+  it('year divisible by 4, not divisible by 100 in leap year', () => {
     expect(isLeap(1996)).toBe(true)
   })
 
-  xit('year divisible by 4 and 5 is still a leap year', () => {
+  it('year divisible by 4 and 5 is still a leap year', () => {
     expect(isLeap(1960)).toBe(true)
   })
 
-  xit('year divisible by 100, not divisible by 400 in common year', () => {
+  it('year divisible by 100, not divisible by 400 in common year', () => {
     expect(isLeap(2100)).toBe(false)
   })
 
